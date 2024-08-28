@@ -26,15 +26,15 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
          
-       <% for( let index = 0; index < posts.length; index++ ) { %>
-
+      <% posts.forEach(data => { %>
+        
         <div class="post-preview">
-          <a href="post.html">
+          <a href="/posts/<%= data._id  %>">
             <h2 class="post-title">
-              <% posts[index].title %>
+              <%= data.title %>
             </h2>
             <h3 class="post-subtitle">
-              <% posts[index].detail %>
+              <%= data.detail %>
             </h3>
           </a>
           <p class="post-meta">Posted by
@@ -72,10 +72,7 @@
         </div>
         <hr>
 
-       
-       <% } %>
-        
-
+      <% }) %>
 
         <!-- Pager -->
         <div class="clearfix">
